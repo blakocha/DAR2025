@@ -198,3 +198,13 @@ library(googlesheets4)
 gs4_deauth()
 age <- read_sheet(URL)
 ```
+
+```{r}
+correct <- age[1,2:11]
+for(i in 2:14){
+  print("===================================")
+  print(age$id[i])
+  print(age[i,2:11]-correct)
+  print("sum of absolute differences: ")
+  print(sum(abs(age[i,2:11]-correct)))}
+```

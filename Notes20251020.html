@@ -536,6 +536,117 @@ gs4_deauth()
 age &lt;- read_sheet(URL)</code></pre>
 <pre><code>## ✔ Reading from &quot;FaceGuessingResults&quot;.</code></pre>
 <pre><code>## ✔ Range &#39;Sheet1&#39;.</code></pre>
+<pre class="r"><code>correct &lt;- age[1,2:11]
+for(i in 2:14){
+  print(&quot;===================================&quot;)
+  print(age$id[i])
+  print(age[i,2:11]-correct)
+  print(&quot;sum of absolute differences: &quot;)
+  print(sum(abs(age[i,2:11]-correct)))}</code></pre>
+<pre><code>## [1] &quot;===================================&quot;
+## [[1]]
+## [1] 190515
+## 
+##   f1 f2  f3 f4 f5  f6 f7 f8  f9 f10
+## 1  0 -1 -17 -1 -4 -14 10  2 -27   4
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 80
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] 210868
+## 
+##   f1 f2 f3 f4 f5 f6 f7 f8 f9 f10
+## 1  7 11 -3  9 10 -1  9  9 -3   2
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 64
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] 195614
+## 
+##   f1 f2 f3 f4 f5 f6 f7 f8  f9 f10
+## 1  9 12 -8  6 -2 -5  9  0 -14  -4
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 69
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] &quot;S211238&quot;
+## 
+##   f1 f2  f3 f4 f5 f6 f7 f8  f9 f10
+## 1  1 -6 -14 -5 -1 -6  5  3 -19  -7
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 67
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] &quot;Yu&quot;
+## 
+##   f1 f2  f3 f4 f5  f6 f7 f8  f9 f10
+## 1  3  2 -17  1 -5 -24 13  6 -19   4
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 94
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] 195477
+## 
+##   f1 f2  f3 f4 f5 f6 f7 f8  f9 f10
+## 1 17 15 -12 -2 10 -3 10  5 -15  -7
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 96
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] 210863
+## 
+##   f1 f2  f3 f4 f5  f6 f7 f8  f9 f10
+## 1  3  1 -19 -2 -5 -13 11 -3 -27   4
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 88
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] &quot;S180749&quot;
+## 
+##   f1 f2  f3 f4 f5  f6 f7 f8  f9 f10
+## 1  3  7 -12 -2  0 -14 11  3 -11  -2
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 65
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] &quot;s211718&quot;
+## 
+##   f1 f2  f3 f4 f5 f6 f7 f8  f9 f10
+## 1  7 -3 -14  8 -4 -6  6  6 -22   9
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 85
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] 210870
+## 
+##   f1 f2  f3 f4 f5  f6 f7 f8  f9 f10
+## 1 13  4 -11  6 10 -10 11  1 -21  -6
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 93
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] &quot;s211291&quot;
+## 
+##   f1 f2 f3 f4 f5  f6 f7 f8  f9 f10
+## 1  3  4 -9  3 -4 -11 12  6 -22 -16
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 90
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] &quot;S211239&quot;
+## 
+##   f1 f2  f3 f4 f5 f6 f7 f8  f9 f10
+## 1  0 -7 -16  2  0 -8  6  0 -16   3
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 58
+## [1] &quot;===================================&quot;
+## [[1]]
+## [1] 195410
+## 
+##   f1 f2  f3  f4  f5  f6 f7 f8  f9 f10
+## 1  6  5 -17 -13 -14 -24  5 -5 -29  -4
+## [1] &quot;sum of absolute differences: &quot;
+## [1] 122</code></pre>
 </div>
 </div>
 </div>
