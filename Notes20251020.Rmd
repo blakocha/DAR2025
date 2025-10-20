@@ -208,3 +208,14 @@ for(i in 2:14){
   print("sum of absolute differences: ")
   print(sum(abs(age[i,2:11]-correct)))}
 ```
+
+For which face there was the lowest dispersion in answers?
+
+```{r}
+for(column_number in 2:11){
+  print(names(age)[column_number])
+  print(mean(age[[column_number]]))
+  print(sd(age[[column_number]]))
+}
+```
+

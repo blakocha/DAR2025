@@ -647,6 +647,42 @@ for(i in 2:14){
 ## 1  6  5 -17 -13 -14 -24  5 -5 -29  -4
 ## [1] &quot;sum of absolute differences: &quot;
 ## [1] 122</code></pre>
+<p>For which face there was the lowest dispersion in answers?</p>
+<pre class="r"><code>for(column_number in 2:11){
+  print(names(age)[column_number])
+  print(mean(age[[column_number]]))
+  print(sd(age[[column_number]]))
+}</code></pre>
+<pre><code>## [1] &quot;f1&quot;
+## [1] 30.14286
+## [1] 5.111934
+## [1] &quot;f2&quot;
+## [1] 34.14286
+## [1] 6.549893
+## [1] &quot;f3&quot;
+## [1] 66.92857
+## [1] 5.539568
+## [1] &quot;f4&quot;
+## [1] 37.71429
+## [1] 5.756983
+## [1] &quot;f5&quot;
+## [1] 41.35714
+## [1] 6.755136
+## [1] &quot;f6&quot;
+## [1] 48.07143
+## [1] 7.467512
+## [1] &quot;f7&quot;
+## [1] 22.42857
+## [1] 3.56725
+## [1] &quot;f8&quot;
+## [1] 31.35714
+## [1] 3.855209
+## [1] &quot;f9&quot;
+## [1] 49.5
+## [1] 8.546254
+## [1] &quot;f10&quot;
+## [1] 44.57143
+## [1] 6.441623</code></pre>
 </div>
 </div>
 </div>
