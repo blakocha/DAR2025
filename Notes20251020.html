@@ -448,6 +448,15 @@ We calculate the geometric mean using only those with
 fb_friends&gt;0.</p>
 <pre class="r"><code>psych::geometric.mean(d$fb_friends[d$fb_friends&gt;0])</code></pre>
 <pre><code>## [1] 130.336</code></pre>
+<ul>
+<li><strong><em>The truncated (trimmed) mean</em></strong></li>
+</ul>
+<p>Using <code>mean</code> function, with <code>trim=</code>
+parameter.</p>
+<pre class="r"><code>mean(d$head_circ, na.rm=TRUE, trim=0.05)</code></pre>
+<pre><code>## [1] 57.3383</code></pre>
+<pre class="r"><code>mean(d$fb_friends, na.rm=TRUE, trim=0.05)</code></pre>
+<pre><code>## [1] 269.2222</code></pre>
 </div>
 </div>
 </div>

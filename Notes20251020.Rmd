@@ -97,6 +97,12 @@ Geometric mean can be calculated only for the data where all elements are postiv
 psych::geometric.mean(d$fb_friends[d$fb_friends>0])
 ```
 
+- __*The truncated (trimmed) mean*__
 
+Using `mean` function, with `trim=` parameter. 
 
+```{r}
+mean(d$head_circ, na.rm=TRUE, trim=0.05)
+mean(d$fb_friends, na.rm=TRUE, trim=0.05)
+```
 
