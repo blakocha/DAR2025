@@ -361,9 +361,14 @@ display: none;
 <h1>Descriptive statistics in R</h1>
 <div id="the-data" class="section level2">
 <h2>The data</h2>
+<p>We are using googlesheets4 library. If it is not installed on your
+computer, you should install first
+(<code>install.packages(&quot;googlesheets4&quot;)</code>).</p>
 <pre class="r"><code>library(googlesheets4)</code></pre>
-<pre><code>## Warning: package &#39;googlesheets4&#39; was built under R version 4.4.3</code></pre>
-<pre class="r"><code>gs4_deauth()
+<p>After the library is loaded we turn off the google authorization (no
+need to log in, the data is available to anyone with the link: <a href="https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing" class="uri">https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing</a>)</p>
+<pre class="r"><code>library(googlesheets4)
+gs4_deauth()
 d &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing&quot;, &quot;clean_data&quot;)</code></pre>
 <pre><code>## ✔ Reading from &quot;Green_DAR2025_data&quot;.</code></pre>
 <pre><code>## ✔ Range &#39;&#39;clean_data&#39;&#39;.</code></pre>
@@ -372,6 +377,7 @@ d &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvy
 <h2>Distribution of one variable</h2>
 <div id="central-tendency-and-positional-measures" class="section level3">
 <h3>Central tendency and positional measures</h3>
+<p><strong>Central tendency measures</strong></p>
 <ul>
 <li>The arithmetic mean</li>
 <li>The median</li>
@@ -381,9 +387,10 @@ average annual rate of growth)</li>
 <li><a href="https://en.wikipedia.org/wiki/Truncated_mean">Truncated
 mean</a></li>
 </ul>
-<p>Let us take <code>head_circ</code> and <code>fb_friends</code>
-variables from the data and calculate the mean, the median, the
-geometric mean, the truncated mean (cut 5% from each tail).</p>
+<p>Let us take <code>head_circ</code> (head circumference) and
+<code>fb_friends</code> (number of Facebook connections) variables from
+the data and calculate the mean, the median, the geometric mean, the
+truncated mean (cut 5% from each tail).</p>
 </div>
 </div>
 </div>

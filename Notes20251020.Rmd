@@ -13,6 +13,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## The data
 
+We are using googlesheets4 library. 
+If it is not installed on your computer, you should install first (`install.packages("googlesheets4")`). 
+
+```{r, warning=FALSE}
+library(googlesheets4)
+```
+
+After the library is loaded we turn off the google authorization (no need to log in, the data is available to anyone with the link: https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing)
+
 ```{r}
 library(googlesheets4)
 gs4_deauth()
@@ -23,10 +32,13 @@ d <- read_sheet("https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8p
 
 ### Central tendency and positional measures
 
+__Central tendency measures__
+
 - The arithmetic mean
 - The median
 - The mode (usually: the most frequent value)
 - The geometric mean (we use it for example to calculate compound average annual rate of growth)
 - [Truncated mean](https://en.wikipedia.org/wiki/Truncated_mean)
 
-Let us take `head_circ` and `fb_friends` variables from the data and calculate the mean, the median, the geometric mean, the truncated mean (cut 5\% from each tail). 
+Let us take `head_circ` (head circumference) and `fb_friends` (number of Facebook connections) variables from the data and calculate the mean, the median, the geometric mean, the truncated mean (cut 5\% from each tail). 
+
