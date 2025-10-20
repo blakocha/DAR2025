@@ -90,3 +90,13 @@ The second option is to the `psych` package (`install.packages("psych")` if not 
 ```{r}
 psych::geometric.mean(d$head_circ)
 ```
+
+Geometric mean can be calculated only for the data where all elements are postive (greater than zero). There were some people who have no facebook in the survey. So we have to exclude them from the calculation. We calculate the geometric mean using only those with fb_friends>0.
+
+```{r}
+psych::geometric.mean(d$fb_friends[d$fb_friends>0])
+```
+
+
+
+
