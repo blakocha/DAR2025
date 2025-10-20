@@ -42,9 +42,18 @@ __Central tendency measures__
 
 Let us take `head_circ` (head circumference) and `fb_friends` (number of Facebook connections) variables from the data and calculate the mean, the median, the geometric mean, the truncated mean (cut 5\% from each tail). 
 
+- __*The arithmetic mean*__
+
 ```{r}
 # I put na.rm=TRUE to remove the NAs (not-availables, missing values) from the calculation
 
 mean(d$head_circ, na.rm=TRUE)
 mean(d$fb_friends, na.rm=TRUE)
+```
+
+- __*The median*__
+
+```{r}
+median(d$head_circ, na.rm=TRUE)
+median(d$fb_friends, na.rm=TRUE)
 ```
