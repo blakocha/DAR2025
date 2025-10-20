@@ -466,6 +466,19 @@ quantile(d$head_circ, c(0.25, 0.5, 0.75), na.rm=TRUE)</code></pre>
 <pre class="r"><code>quantile(d$fb_friends, c(0.25, 0.5, 0.75), na.rm=TRUE)</code></pre>
 <pre><code>## 25% 50% 75% 
 ##  81 214 406</code></pre>
+<pre class="r"><code># deciles:
+(1:9)/10</code></pre>
+<pre><code>## [1] 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9</code></pre>
+<pre class="r"><code>quantile(d$head_circ, (1:9)/10, na.rm=TRUE)</code></pre>
+<pre><code>##  10%  20%  30%  40%  50%  60%  70%  80%  90% 
+## 54.0 55.5 56.0 56.7 57.8 58.0 58.5 60.0 60.0</code></pre>
+<pre class="r"><code>quantile(d$fb_friends, (1:9)/10, na.rm=TRUE)</code></pre>
+<pre><code>##   10%   20%   30%   40%   50%   60%   70%   80%   90% 
+##   6.2  46.0  98.8 139.6 214.0 278.4 377.0 483.8 658.6</code></pre>
+<pre class="r"><code># specific percentiles, for example 65th percentile
+quantile(d$head_circ, .65, na.rm=TRUE)</code></pre>
+<pre><code>## 65% 
+##  58</code></pre>
 </div>
 </div>
 </div>

@@ -115,3 +115,15 @@ Quartiles, deciles, percentiles. They are all called quaNtiles.
 quantile(d$head_circ, c(0.25, 0.5, 0.75), na.rm=TRUE)
 quantile(d$fb_friends, c(0.25, 0.5, 0.75), na.rm=TRUE)
 ```
+
+```{r}
+# deciles:
+(1:9)/10
+quantile(d$head_circ, (1:9)/10, na.rm=TRUE)
+quantile(d$fb_friends, (1:9)/10, na.rm=TRUE)
+```
+
+```{r}
+# specific percentiles, for example 65th percentile
+quantile(d$head_circ, .65, na.rm=TRUE)
+```
