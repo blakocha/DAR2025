@@ -483,13 +483,18 @@ quantile(d$head_circ, .65, na.rm=TRUE)</code></pre>
 <div id="dispersion-measures" class="section level3">
 <h3>Dispersion measures</h3>
 <ul>
-<li>standard deviation</li>
-<li>variance</li>
+<li>standard deviation <span class="math display">\[s =
+\sqrt{\frac{1}{n-1}\sum_{i=1}^n
+\left(x_i-\bar{x}\right)^2}\]</span></li>
+<li>variance <span class="math display">\[s^2 =
+\frac{1}{n-1}\sum_{i=1}^n \left(x_i-\bar{x}\right)^2\]</span></li>
 <li>range (max-min)</li>
 <li>IQR (<a href="https://en.wikipedia.org/wiki/Interquartile_range">interquartile
-range</a>)</li>
+range</a>), ie. the difference between the upper and the lower quartile:
+<span class="math display">\[Q_3-Q_1\]</span></li>
 <li><a href="https://en.wikipedia.org/wiki/Mean_absolute_difference">mean
-absolute difference</a></li>
+absolute difference</a>, ie. <span class="math display">\[\frac{1}{n}\sum_{i=1}^n
+|x_i-\bar{x}|\]</span></li>
 </ul>
 </div>
 </div>

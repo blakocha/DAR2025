@@ -131,9 +131,13 @@ quantile(d$head_circ, .65, na.rm=TRUE)
 ### Dispersion measures
 
 - standard deviation
+$$s = \sqrt{\frac{1}{n-1}\sum_{i=1}^n \left(x_i-\bar{x}\right)^2}$$
 - variance
+$$s^2 = \frac{1}{n-1}\sum_{i=1}^n \left(x_i-\bar{x}\right)^2$$
 - range (max-min)
-- IQR ([interquartile range](https://en.wikipedia.org/wiki/Interquartile_range)) 
-- [mean absolute difference](https://en.wikipedia.org/wiki/Mean_absolute_difference)
+- IQR ([interquartile range](https://en.wikipedia.org/wiki/Interquartile_range)), ie. the difference between the upper and the lower quartile: $$Q_3-Q_1$$
+- [mean absolute difference](https://en.wikipedia.org/wiki/Mean_absolute_difference), ie. $$\frac{1}{n}\sum_{i=1}^n |x_i-\bar{x}|$$
+
+
 
 
