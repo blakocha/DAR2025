@@ -391,6 +391,12 @@ mean</a></li>
 <code>fb_friends</code> (number of Facebook connections) variables from
 the data and calculate the mean, the median, the geometric mean, the
 truncated mean (cut 5% from each tail).</p>
+<pre class="r"><code># I put na.rm=TRUE to remove the NAs (not-availables, missing values) from the calculation
+
+mean(d$head_circ, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 57.37059</code></pre>
+<pre class="r"><code>mean(d$fb_friends, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 294.1837</code></pre>
 </div>
 </div>
 </div>
