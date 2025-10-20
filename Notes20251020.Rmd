@@ -84,3 +84,9 @@ mean(log(d$head_circ), na.rm=TRUE)
 ```{r}
 exp(mean(log(d$head_circ), na.rm=TRUE))
 ```
+
+The second option is to the `psych` package (`install.packages("psych")` if not present).
+
+```{r}
+psych::geometric.mean(d$head_circ)
+```
