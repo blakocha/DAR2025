@@ -187,4 +187,14 @@ Age guessing:
 https://forms.gle/eQ5ZUqXr2i9eacpD7
 
 Age guessing results:
-https://docs.google.com/spreadsheets/d/1CCC_-5LSy8_3nQYi55-dtQKhkbgcstzul8LNt78WVNU/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1CCC_-5LSy8_3nQYi55-dtQKhkbgcstzul8LNt78WVNU/edi
+t?usp=sharing
+
+Download the results to R:
+
+```{r}
+URL = "https://docs.google.com/spreadsheets/d/1CCC_-5LSy8_3nQYi55-dtQKhkbgcstzul8LNt78WVNU/edit?usp=sharing"
+library(googlesheets4)
+gs4_deauth()
+age <- read_sheet(URL)
+```
