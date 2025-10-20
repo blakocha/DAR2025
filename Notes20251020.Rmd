@@ -222,6 +222,8 @@ for(column_number in 2:11){
 
 ### Distribution shape measures
 
+More here: https://bookdown.org/blazej_kochanski/statistics1/shape.html
+
 Skewness measures the symmetry:
 
 ```{r}
