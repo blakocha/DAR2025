@@ -407,6 +407,36 @@ mean(d$head_circ, na.rm=TRUE)</code></pre>
 <pre><code>## [1] 57.8</code></pre>
 <pre class="r"><code>median(d$fb_friends, na.rm=TRUE)</code></pre>
 <pre><code>## [1] 214</code></pre>
+<ul>
+<li><strong><em>The geometric mean</em></strong></li>
+</ul>
+<p><span class="math display">\[ Geom = (x_1 \cdot x_2 \cdot ... \cdot
+x_n)^{1/n}\]</span> <span class="math display">\[ Geom =
+\exp\left((\ln(x_1) + \ln(x_2) + ... +
+\ln(x_n))\cdot\frac{1}{n}\right)\]</span></p>
+<p><span class="math inline">\(\exp(x)\)</span> means <span class="math inline">\(e^x\)</span></p>
+<p>Steps:</p>
+<ol style="list-style-type: decimal">
+<li>Natural logarithms using <code>log()</code></li>
+</ol>
+<pre class="r"><code>log(d$head_circ)</code></pre>
+<pre><code>##  [1] 4.060443       NA 4.094345 4.025352 4.069027 4.016383 4.094345 4.094345
+##  [9] 4.094345 4.094345 4.094345 4.016383 4.025352 4.025352 4.060443 4.025352
+## [17] 4.043051 4.077537 4.110874 3.988984 3.979682 3.988984 4.094345 4.043051
+## [25] 3.988984 4.043051 3.970292 4.025352 4.056989 4.037774 4.032469 4.060443
+## [33] 4.127134 4.060443 4.077537 4.189655 4.025352 4.060443 4.060443 4.110874
+## [41] 3.970292 4.094345 4.007333 4.043051 4.025352 4.007333 4.060443 3.988984
+## [49] 4.094345 4.060443 4.060443 3.912023</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>The mean (excluding <code>NA</code>s)</li>
+</ol>
+<pre class="r"><code>mean(log(d$head_circ), na.rm=TRUE)</code></pre>
+<pre><code>## [1] 4.048398</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>De-log = Geometric mean</li>
+</ol>
+<pre class="r"><code>exp(mean(log(d$head_circ), na.rm=TRUE))</code></pre>
+<pre><code>## [1] 57.30556</code></pre>
 </div>
 </div>
 </div>

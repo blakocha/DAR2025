@@ -57,3 +57,30 @@ mean(d$fb_friends, na.rm=TRUE)
 median(d$head_circ, na.rm=TRUE)
 median(d$fb_friends, na.rm=TRUE)
 ```
+
+- __*The geometric mean*__
+
+$$ Geom = (x_1 \cdot x_2 \cdot ... \cdot x_n)^{1/n}$$
+$$ Geom = \exp\left((\ln(x_1) + \ln(x_2) + ... + \ln(x_n))\cdot\frac{1}{n}\right)$$
+
+$\exp(x)$ means $e^x$ 
+
+Steps:
+
+1) Natural logarithms using `log()`
+
+```{r}
+log(d$head_circ)
+```
+
+2) The mean (excluding `NA`s)
+
+```{r}
+mean(log(d$head_circ), na.rm=TRUE)
+```
+
+3) De-log = Geometric mean
+
+```{r}
+exp(mean(log(d$head_circ), na.rm=TRUE))
+```
