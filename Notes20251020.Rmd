@@ -182,6 +182,7 @@ mean(abs(d$fb_friends - M), na.rm=TRUE)
 ```
 
 
+### Age guessing exercise:
 
 Age guessing:
 https://forms.gle/eQ5ZUqXr2i9eacpD7
@@ -217,5 +218,24 @@ for(column_number in 2:11){
   print(mean(age[[column_number]]))
   print(sd(age[[column_number]]))
 }
+```
+
+### Distribution shape measures
+
+Skewness measures the symmetry:
+
+```{r}
+#install.packages("e1071")
+library(e1071)
+skewness(d$head_circ, na.rm=TRUE)
+skewness(d$fb_friends, na.rm=TRUE)
+```
+
+Kurtosis measures (the extremity of) the tails
+
+```{r}
+library(e1071)
+kurtosis(d$head_circ, na.rm=TRUE)
+kurtosis(d$fb_friends, na.rm=TRUE)
 ```
 

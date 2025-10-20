@@ -526,6 +526,9 @@ mean(abs(d$head_circ - M), na.rm=TRUE)</code></pre>
 <pre class="r"><code>M &lt;- mean(d$fb_friends, na.rm=TRUE)
 mean(abs(d$fb_friends - M), na.rm=TRUE)</code></pre>
 <pre><code>## [1] 224.7963</code></pre>
+</div>
+<div id="age-guessing-exercise" class="section level3">
+<h3>Age guessing exercise:</h3>
 <p>Age guessing: <a href="https://forms.gle/eQ5ZUqXr2i9eacpD7" class="uri">https://forms.gle/eQ5ZUqXr2i9eacpD7</a></p>
 <p>Age guessing results: <a href="https://docs.google.com/spreadsheets/d/1CCC_-5LSy8_3nQYi55-dtQKhkbgcstzul8LNt78WVNU/edi" class="uri">https://docs.google.com/spreadsheets/d/1CCC_-5LSy8_3nQYi55-dtQKhkbgcstzul8LNt78WVNU/edi</a>
 t?usp=sharing</p>
@@ -683,6 +686,23 @@ for(i in 2:14){
 ## [1] &quot;f10&quot;
 ## [1] 44.57143
 ## [1] 6.441623</code></pre>
+</div>
+<div id="distribution-shape-measures" class="section level3">
+<h3>Distribution shape measures</h3>
+<p>Skewness measures the symmetry:</p>
+<pre class="r"><code>#install.packages(&quot;e1071&quot;)
+library(e1071)</code></pre>
+<pre><code>## Warning: package &#39;e1071&#39; was built under R version 4.4.3</code></pre>
+<pre class="r"><code>skewness(d$head_circ, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 0.1637702</code></pre>
+<pre class="r"><code>skewness(d$fb_friends, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 1.342988</code></pre>
+<p>Kurtosis measures (the extremity of) the tails</p>
+<pre class="r"><code>library(e1071)
+kurtosis(d$head_circ, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 0.8257691</code></pre>
+<pre class="r"><code>kurtosis(d$fb_friends, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 1.253058</code></pre>
 </div>
 </div>
 </div>
