@@ -138,6 +138,45 @@ $$s^2 = \frac{1}{n-1}\sum_{i=1}^n \left(x_i-\bar{x}\right)^2$$
 - IQR ([interquartile range](https://en.wikipedia.org/wiki/Interquartile_range)), ie. the difference between the upper and the lower quartile: $$Q_3-Q_1$$
 - [mean absolute difference](https://en.wikipedia.org/wiki/Mean_absolute_difference), ie. $$\frac{1}{n}\sum_{i=1}^n |x_i-\bar{x}|$$
 
+The standard deviation: `sd` function:
+
+```{r}
+sd(d$head_circ, na.rm=TRUE)
+sd(d$fb_friends, na.rm=TRUE)
+```
 
 
+The standard deviation: `var` function:
 
+```{r}
+var(d$head_circ, na.rm=TRUE)
+var(d$fb_friends, na.rm=TRUE)
+```
+
+The ranges
+
+```{r}
+diff(range(d$head_circ, na.rm=TRUE))
+diff(range(d$fb_friends, na.rm=TRUE))
+```
+
+The IQR
+
+```{r}
+IQR(d$head_circ, na.rm=TRUE)
+IQR(d$fb_friends, na.rm=TRUE)
+```
+
+The mean absolute difference
+
+If you store the mean (under the nam `M`) you can then compute the absolute differences: `abs(d$head_circ - M)` and the mean of them:
+
+```{r}
+M <- mean(d$head_circ, na.rm=TRUE)
+mean(abs(d$head_circ - M), na.rm=TRUE)
+```
+
+```{r}
+M <- mean(d$fb_friends, na.rm=TRUE)
+mean(abs(d$fb_friends - M), na.rm=TRUE)
+```

@@ -496,6 +496,36 @@ range</a>), ie. the difference between the upper and the lower quartile:
 absolute difference</a>, ie. <span class="math display">\[\frac{1}{n}\sum_{i=1}^n
 |x_i-\bar{x}|\]</span></li>
 </ul>
+<p>The standard deviation: <code>sd</code> function:</p>
+<pre class="r"><code>sd(d$head_circ, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 2.760746</code></pre>
+<pre class="r"><code>sd(d$fb_friends, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 297.7758</code></pre>
+<p>The standard deviation: <code>var</code> function:</p>
+<pre class="r"><code>var(d$head_circ, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 7.621718</code></pre>
+<pre class="r"><code>var(d$fb_friends, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 88670.4</code></pre>
+<p>The ranges</p>
+<pre class="r"><code>diff(range(d$head_circ, na.rm=TRUE))</code></pre>
+<pre><code>## [1] 16</code></pre>
+<pre class="r"><code>diff(range(d$fb_friends, na.rm=TRUE))</code></pre>
+<pre><code>## [1] 1200</code></pre>
+<p>The IQR</p>
+<pre class="r"><code>IQR(d$head_circ, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 3.5</code></pre>
+<pre class="r"><code>IQR(d$fb_friends, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 325</code></pre>
+<p>The mean absolute difference</p>
+<p>If you store the mean (under the nam <code>M</code>) you can then
+compute the absolute differences: <code>abs(d$head_circ - M)</code> and
+the mean of them:</p>
+<pre class="r"><code>M &lt;- mean(d$head_circ, na.rm=TRUE)
+mean(abs(d$head_circ - M), na.rm=TRUE)</code></pre>
+<pre><code>## [1] 2.143714</code></pre>
+<pre class="r"><code>M &lt;- mean(d$fb_friends, na.rm=TRUE)
+mean(abs(d$fb_friends - M), na.rm=TRUE)</code></pre>
+<pre><code>## [1] 224.7963</code></pre>
 </div>
 </div>
 </div>
