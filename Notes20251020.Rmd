@@ -180,3 +180,8 @@ mean(abs(d$head_circ - M), na.rm=TRUE)
 M <- mean(d$fb_friends, na.rm=TRUE)
 mean(abs(d$fb_friends - M), na.rm=TRUE)
 ```
+
+
+
+Age guessing:
+https://forms.gle/eQ5ZUqXr2i9eacpD7
