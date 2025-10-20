@@ -23,4 +23,10 @@ d <- read_sheet("https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8p
 
 ### Central tendency and positional measures
 
-The mean. 
+- The arithmetic mean
+- The median
+- The mode (usually: the most frequent value)
+- The geometric mean (we use it for example to calculate compound average annual rate of growth)
+- [Truncated mean](https://en.wikipedia.org/wiki/Truncated_mean)
+
+Let us take `head_circ` and `fb_friends` variables from the data and calculate the mean, the median, the geometric mean, the truncated mean (cut 5\% from each tail). 
