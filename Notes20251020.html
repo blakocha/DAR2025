@@ -457,6 +457,15 @@ parameter.</p>
 <pre><code>## [1] 57.3383</code></pre>
 <pre class="r"><code>mean(d$fb_friends, na.rm=TRUE, trim=0.05)</code></pre>
 <pre><code>## [1] 269.2222</code></pre>
+<p><strong>Positional measures</strong></p>
+<p>Quartiles, deciles, percentiles. They are all called quaNtiles.</p>
+<pre class="r"><code># quaRtiles:
+quantile(d$head_circ, c(0.25, 0.5, 0.75), na.rm=TRUE)</code></pre>
+<pre><code>##  25%  50%  75% 
+## 56.0 57.8 59.5</code></pre>
+<pre class="r"><code>quantile(d$fb_friends, c(0.25, 0.5, 0.75), na.rm=TRUE)</code></pre>
+<pre><code>## 25% 50% 75% 
+##  81 214 406</code></pre>
 </div>
 </div>
 </div>

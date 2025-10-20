@@ -106,3 +106,12 @@ mean(d$head_circ, na.rm=TRUE, trim=0.05)
 mean(d$fb_friends, na.rm=TRUE, trim=0.05)
 ```
 
+__Positional measures__
+
+Quartiles, deciles, percentiles. They are all called quaNtiles. 
+
+```{r}
+# quaRtiles:
+quantile(d$head_circ, c(0.25, 0.5, 0.75), na.rm=TRUE)
+quantile(d$fb_friends, c(0.25, 0.5, 0.75), na.rm=TRUE)
+```
