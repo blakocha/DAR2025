@@ -123,4 +123,9 @@ What could be the measure of the correlation between gender and height?
 
 Idea 1: translate the binary variable into 0/1 and compute the Pearson correlation coefficient. It is called than the [point-biserial correlation coefficient](https://en.wikipedia.org/wiki/Point-biserial_correlation_coefficient)
 
+Idea 2: Cohen's d measure. 
 
+$$d = \frac{\bar{x}_1 - \bar{x}_2} s$$
+
+$$   \frac{\bar{x}_1 - \bar{x}_2}
+{\sqrt{\frac{(n_1-1)s^2_1 + (n_2-1)s^2_2}{n_1+n_2 - 2}}}$$
