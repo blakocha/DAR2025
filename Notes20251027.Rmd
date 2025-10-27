@@ -99,5 +99,12 @@ d$stat <- factor(d$stat_likert, ordered=TRUE, levels=
 
 # Then I can calculate the correlation
 cor(d$head_circ, as.numeric(d$stat), method="spearman", use="complete.obs")
+cor(d$head_circ, as.numeric(d$stat), method="kendall", use="complete.obs")
 ```
+
+## Two categorical variables - Cramer's V coefficient
+
+Compute the Cramer's V between eye colour and gender. 
+
+
 
