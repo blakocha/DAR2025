@@ -117,7 +117,11 @@ vcd::assocstats(tab)$cramer
 
 ## Correlation between binary variable and numeric variable
 
-Example: which correlation bigger gender and height or gender and hand span?
+Example: which correlation is bigger 
+
+- gender and height or 
+
+- gender and hand span?
 
 What could be the measure of the correlation between gender and height?
 
@@ -131,10 +135,13 @@ $$   = \frac{\bar{x}_1 - \bar{x}_2}
 {\sqrt{\frac{(n_1-1)s^2_1 + (n_2-1)s^2_2}{n_1+n_2 - 2}}}$$
 
 ```{r}
-(mean_males = mean(d$height[mask]))
-(mean_females = mean(d$height[!mask]))
-(s1 = sd(d$height[mask]))
-(s2 = sd(d$height[!mask]))
+(mean1 = mean(d$height[mask])) # mean for males
+(mean2 = mean(d$height[!mask])) # mean for females
+(s1 = sd(d$height[mask])) # sd for males
+(s2 = sd(d$height[!mask])) # sd for females
+(n1 = length(d$height[mask])) # number of males
+(n2 = length(d$height[!mask])) # number of females
+(cohenD = (mean_males - mean_females)/sqrt(((n1-1)*s1^2+(n2-1)*s2^2)/(n1+n2-2)))
 ```
 
 ```{r}
@@ -143,4 +150,10 @@ effsize::cohen.d(d$height~d$gender)$estimate
 
 Idea 3: [Probability of superiority](https://en.wikipedia.org/wiki/Probability_of_superiority). Another name is [area under the curve (AUC)](https://en.wikipedia.org/w/index.php?title=Area_under_the_curve_(receiver_operating_characteristic))
 
+```{r}
+#install.packages("bigstatsr")
+bigstatsr::AUC(d$height, 1*(d$gender=="Male"))
+```
+
+It seems that if you sample a man and a woman from this group, the probability of the man being taller is 0.91. 
 
