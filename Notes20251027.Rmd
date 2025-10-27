@@ -104,7 +104,16 @@ cor(d$head_circ, as.numeric(d$stat), method="kendall", use="complete.obs")
 
 ## Two categorical variables - Cramer's V coefficient
 
-Compute the Cramer's V between eye colour and gender. 
+Compute the [Cramer's V](https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_V) between eye colour and gender. 
+
+```{r}
+d$eye_colour2 <- d$eye_colour
+d$eye_colour2[!(d$eye_colour %in% c("Blue", "Brown", "Green"))] <- "Other"
+tab <- table(d$gender, d$eye_colour2)
+tab
+vcd::assocstats(tab)
+vcd::assocstats(tab)$cramer
+```
 
 
 
