@@ -115,5 +115,5 @@ vcd::assocstats(tab)
 vcd::assocstats(tab)$cramer
 ```
 
-
+The form: [https://forms.gle/J8XASpqvq4UUJCkb9]
 
