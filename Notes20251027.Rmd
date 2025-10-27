@@ -46,3 +46,13 @@ plot(d$avg_hand_span[mask], d$height[mask], pch=16, col=rgb(0,0,0,.4))
 cor(d$avg_hand_span[mask], d$height[mask])
 ```
 
+Example [from the history by Galton](): correlation between the so-called "midparent" height and an adult child height (both in inches):
+
+```{r}
+#install.packages("HistData")
+library(HistData)
+data(Galton)
+plot(jitter(Galton$parent), jitter(Galton$child), 
+     pch=16, col=rgb(0,0,0,.4))
+cor(Galton$parent, Galton$child)
+```
