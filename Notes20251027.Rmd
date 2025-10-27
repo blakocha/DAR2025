@@ -19,4 +19,16 @@ gs4_deauth()
 d <- read_sheet("https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing", "clean_data")
 ```
 
-## Pearson correlation
+## Pearson correlation coefficient
+
+Measures the **linear** correlation between two quantitative (numeric) variables. See [wikipedia](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)
+
+Example: correlation between right and left hand span. 
+
+```{r}
+plot(d$right_hand_span, d$left_hand_span, pch=16)
+cor(d$right_hand_span, d$left_hand_span)
+```
+
+
+
