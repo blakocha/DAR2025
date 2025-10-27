@@ -26,13 +26,23 @@ Measures the **linear** correlation between two quantitative (numeric) variables
 Example: correlation between right and left hand span. 
 
 ```{r}
-plot(d$right_hand_span, d$left_hand_span, pch=16)
+plot(d$right_hand_span, d$left_hand_span, pch=16, col=rgb(0,0,0,.4))
 cor(d$right_hand_span, d$left_hand_span)
 ```
 
+
 Correlation between the height and average hand span?
 
+```{r}
+d$avg_hand_span = (d$right_hand_span + d$left_hand_span)/2
+cor(d$avg_hand_span, d$height)
+```
 
 Correlation between the height and average hand span for males? 
 
+```{r}
+mask <- (d$gender == "Male") 
+plot(d$avg_hand_span[mask], d$height[mask], pch=16, col=rgb(0,0,0,.4))
+cor(d$avg_hand_span[mask], d$height[mask])
+```
 
