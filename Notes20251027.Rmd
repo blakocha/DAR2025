@@ -88,7 +88,7 @@ Females:
 Pearson: `r cor(d$height[!mask], d$head_circ[!mask])`
 Spearman: `r cor(d$height[!mask], d$head_circ[!mask], method="spearman")`
 
-Calculate the Spearman correlation and Kendall tau metric for head size and stat_likert variable (it was the answer to the question do you think statistics is difficult with Likert scale as the answer):
+Calculate the Spearman correlation and [Kendall tau](https://en.wikipedia.org/wiki/Kendall_rank_correlation_coefficient) for head size (`head_circ`) and `stat_likert` variable (The `stat_likert` variable was the answer to the question "Do you think statistics is difficult?" with [Likert scale](https://en.wikipedia.org/wiki/Likert_scale) as the answer):
 
 ```{r}
 #I will create an ordinal variable "stat" which would be a categorical variable with order (“ordinal variable”)
@@ -97,4 +97,7 @@ d$stat <- factor(d$stat_likert, ordered=TRUE, levels=
                      "Neither agree nor disagree", "Somewhat agree", 
                      "Strongly agree" ))
 
+# Then I can calculate the correlation
+cor(d$head_circ, as.numeric(d$stat), method="spearman", use="complete.obs")
 ```
+
