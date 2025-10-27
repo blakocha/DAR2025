@@ -56,3 +56,9 @@ plot(jitter(Galton$parent), jitter(Galton$child),
      pch=16, col=rgb(0,0,0,.4))
 cor(Galton$parent, Galton$child)
 ```
+
+## Spearman's rank correlation coefficient
+
+[Spearman's rank correlation coefficient](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient) is the correlation coefficient based on ranks instead of the raw values. 
+
+It can be calculated for quantitative (numeric) and ........  variables. 
