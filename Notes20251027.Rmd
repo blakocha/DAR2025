@@ -40,6 +40,8 @@ cor(d$avg_hand_span, d$height)
 
 Correlation between the height and average hand span for males? 
 
+I create a filter (called `mask`). It is a logical vector with `TRUE` when the observation is a `"Male"` and `FALSE` otherwise. [Why do I use double ==? Check what the comparison operator in R are (link)](https://www.geeksforgeeks.org/r-language/what-are-comparison-operators-in-r/)
+
 ```{r}
 mask <- (d$gender == "Male") 
 plot(d$avg_hand_span[mask], d$height[mask], pch=16, col=rgb(0,0,0,.4))
@@ -79,9 +81,9 @@ What are ranks? Example.
 Calculate the Spearman's coefficient for height and head_circ. And compare it to the Pearson coefficient. Separately for Males and Females. 
 
 Males: 
-Pearson:
-Spearman:
+Pearson: `r cor(d$height[mask], d$head_circ[mask], use="pairwise.complete.obs")`
+Spearman: `r cor(d$height[mask], d$head_circ[mask], method="spearman", use="pairwise.complete.obs")`
 
-Females:
-Pearson:
-Spearman:
+Females: 
+Pearson: `r cor(d$height[!mask], d$head_circ[!mask])`
+Spearman: `r cor(d$height[!mask], d$head_circ[!mask], method="spearman")`
