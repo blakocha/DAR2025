@@ -1,0 +1,22 @@
+---
+title: "Notes 2025-10-27"
+author: "Blazej Kochanski"
+date: "2025-10-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Descriptive statistics in R - correlation / association
+
+## The data
+
+```{r}
+library(googlesheets4)
+gs4_deauth()
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing", "clean_data")
+```
+
+## Pearson correlation
