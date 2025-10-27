@@ -115,5 +115,12 @@ vcd::assocstats(tab)
 vcd::assocstats(tab)$cramer
 ```
 
-The form: [https://forms.gle/J8XASpqvq4UUJCkb9]
+## Correlation between binary variable and numeric variable
+
+Example: which correlation bigger gender and height or gender and hand span?
+
+What could be the measure of the correlation between gender and height?
+
+Idea 1: translate the binary variable into 0/1 and compute the Pearson correlation coefficient. It is called than the [point-biserial correlation coefficient](https://en.wikipedia.org/wiki/Point-biserial_correlation_coefficient)
+
 
