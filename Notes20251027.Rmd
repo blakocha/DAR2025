@@ -59,6 +59,19 @@ cor(Galton$parent, Galton$child)
 
 ## Spearman's rank correlation coefficient
 
-[Spearman's rank correlation coefficient](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient) is the correlation coefficient based on ranks instead of the raw values. 
+[Spearman's rank correlation coefficient](https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient) is the correlation coefficient based on ranks instead of the raw values.
 
 It can be calculated for quantitative (numeric) and ........  variables. 
+
+What are ranks? Example. 
+
+| raw values | ranks |
+|:---------:|:-----:|
+| 5 | 1 |
+| 6 | 2 |
+| 9 | 3.5 |
+| 9 | 3.5 |
+| 14 | 6.0 |
+| 14 | 6.0 |
+| 14 | 6.0 |
+| 20 | 8.0 |
