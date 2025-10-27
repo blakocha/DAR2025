@@ -140,4 +140,7 @@ $$   = \frac{\bar{x}_1 - \bar{x}_2}
 ```{r}
 effsize::cohen.d(d$height~d$gender)$estimate
 ```
-```{r}
+
+Idea 3: [Probability of superiority](https://en.wikipedia.org/wiki/Probability_of_superiority). Another name is [area under the curve (AUC)](https://en.wikipedia.org/w/index.php?title=Area_under_the_curve_(receiver_operating_characteristic))
+
+
