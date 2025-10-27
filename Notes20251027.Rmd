@@ -129,3 +129,15 @@ $$d = \frac{\bar{x}_1 - \bar{x}_2} s$$
 
 $$   = \frac{\bar{x}_1 - \bar{x}_2}
 {\sqrt{\frac{(n_1-1)s^2_1 + (n_2-1)s^2_2}{n_1+n_2 - 2}}}$$
+
+```{r}
+(mean_males = mean(d$height[mask]))
+(mean_females = mean(d$height[!mask]))
+(s1 = sd(d$height[mask]))
+(s2 = sd(d$height[!mask]))
+```
+
+```{r}
+effsize::cohen.d(d$height~d$gender)$estimate
+```
+```{r}
