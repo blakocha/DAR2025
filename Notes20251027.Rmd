@@ -46,7 +46,7 @@ plot(d$avg_hand_span[mask], d$height[mask], pch=16, col=rgb(0,0,0,.4))
 cor(d$avg_hand_span[mask], d$height[mask])
 ```
 
-Example [from the history by Galton](): correlation between the so-called "midparent" height and an adult child height (both in inches):
+Example [from the history by Galton](https://www.rdocumentation.org/packages/HistData/versions/0.9-3/topics/Galton): correlation between the so-called "midparent" height and an adult child height (both in inches):
 
 ```{r}
 #install.packages("HistData")
