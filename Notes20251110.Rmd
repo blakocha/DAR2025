@@ -100,3 +100,11 @@ Chi-square test.
 chisq.test(tab)
 chisq.test(table(d$gender, d$eye_colour2))
 ```
+
+## Bootstrapping
+
+Universal simulation-based tool to obtain the confidence interval for a population parameter from a sample. 
+
+Let's construct a 95-percent CI (confidence interval) for the mean height in population with bootstrapping.
+
+We have a sample of n=52 and we create 10000 of size n=52 (these are bootstrap samples). In each bootstrap sample we compute the mean. We have a distribution of those means and we can get a confidence interval from this distribution. 

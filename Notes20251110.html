@@ -480,6 +480,17 @@ gender and eye colour.</p>
 ## data:  table(d$gender, d$eye_colour2)
 ## X-squared = 4.086, df = 3, p-value = 0.2523</code></pre>
 </div>
+<div id="bootstrapping" class="section level2">
+<h2>Bootstrapping</h2>
+<p>Universal simulation-based tool to obtain the confidence interval for
+a population parameter from a sample.</p>
+<p>Let’s construct a 95-percent CI (confidence interval) for the mean
+height in population with bootstrapping.</p>
+<p>We have a sample of n=52 and we create 10000 of size n=52 (these are
+bootstrap samples). In each bootstrap sample we compute the mean. We
+have a distribution of those means and we can get a confidence interval
+from this distribution.</p>
+</div>
 
 
 
