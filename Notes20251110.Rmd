@@ -118,3 +118,9 @@ results <- replicate(nsim,
                      )
 hist(results, breaks=100)
 ```
+
+We can get the confidence interval for the mean using the quantiles of the simulated distribution. For the 95-percent distribution you take quantiles 2.5% (0,025) and 100%-2.5% (0.975). 
+
+```{r}
+quantile(results, c(0.025, 0.975))
+```
