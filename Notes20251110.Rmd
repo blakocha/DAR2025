@@ -1,0 +1,15 @@
+---
+title: "Notes 2025-11-10"
+author: "Blazej Kochanski"
+date: "2025-11-10"
+output: html_document
+---
+
+## The data
+
+```{r}
+library(googlesheets4)
+gs4_deauth()
+d <- read_sheet("https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing", "clean_data")
+```
+
