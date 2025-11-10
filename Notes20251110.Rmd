@@ -73,4 +73,12 @@ Some templates from my statistics2 course:
 
 https://bookdown.org/blazej_kochanski/statistics2/templates-main.html
 
+## How does randomness look like -- experiment
+
+Your job is to imagine 100 tosses of the coin, one after another. One side is "0", another "1" (Orzel/Reszka; Head/Tail) etc. Put them on paper, using a pen. Without computers or real coins/other random number generators. 
+
+Put them in sequence, ten tosses in a line, ten lines. The person, whose tosses are most similar to typical real random tosses wins. 
+
+
+
 
