@@ -90,3 +90,10 @@ tab
 vcd::assocstats(tab)$cramer
 ```
 
+$H_0$: There is no dependency between gender and eye colour. 
+
+$H_A$: There is dependency between gender and eye colour. 
+
+Chi-square test. 
+
+
