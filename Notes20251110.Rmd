@@ -79,6 +79,13 @@ Your job is to imagine 100 tosses of the coin, one after another. One side is "0
 
 Put them in sequence, ten tosses in a line, ten lines. The person, whose tosses are most similar to typical real random tosses wins. 
 
+## Testing correlation (association) between two categorical variables
 
 
+```{r}
+d$eye_colour2 <- d$eye_colour
+d$eye_colour2[!(d$eye_colour %in% c("Blue", "Brown", "Green"))] <- "Other"
+tab <- table(d$gender, d$eye_colour2)
+tab
+```
 

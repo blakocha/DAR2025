@@ -446,6 +446,18 @@ generators.</p>
 <p>Put them in sequence, ten tosses in a line, ten lines. The person,
 whose tosses are most similar to typical real random tosses wins.</p>
 </div>
+<div id="testing-correlation-association-between-two-categorical-variables" class="section level2">
+<h2>Testing correlation (association) between two categorical
+variables</h2>
+<pre class="r"><code>d$eye_colour2 &lt;- d$eye_colour
+d$eye_colour2[!(d$eye_colour %in% c(&quot;Blue&quot;, &quot;Brown&quot;, &quot;Green&quot;))] &lt;- &quot;Other&quot;
+tab &lt;- table(d$gender, d$eye_colour2)
+tab</code></pre>
+<pre><code>##         
+##          Blue Brown Green Other
+##   Female    6     8     1     3
+##   Male     12    10     9     3</code></pre>
+</div>
 
 
 
