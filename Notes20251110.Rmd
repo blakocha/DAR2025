@@ -96,4 +96,7 @@ $H_A$: There is dependency between gender and eye colour.
 
 Chi-square test. 
 
-
+```{r}
+chisq.test(tab)
+chisq.test(table(d$gender, d$eye_colour2))
+```

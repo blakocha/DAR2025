@@ -464,6 +464,21 @@ between gender and eye colour.</p>
 <p><span class="math inline">\(H_A\)</span>: There is dependency between
 gender and eye colour.</p>
 <p>Chi-square test.</p>
+<pre class="r"><code>chisq.test(tab)</code></pre>
+<pre><code>## Warning in chisq.test(tab): Chi-squared approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  tab
+## X-squared = 4.086, df = 3, p-value = 0.2523</code></pre>
+<pre class="r"><code>chisq.test(table(d$gender, d$eye_colour2))</code></pre>
+<pre><code>## Warning in chisq.test(table(d$gender, d$eye_colour2)): Chi-squared
+## approximation may be incorrect</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  table(d$gender, d$eye_colour2)
+## X-squared = 4.086, df = 3, p-value = 0.2523</code></pre>
 </div>
 
 
