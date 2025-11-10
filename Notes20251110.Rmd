@@ -87,5 +87,6 @@ d$eye_colour2 <- d$eye_colour
 d$eye_colour2[!(d$eye_colour %in% c("Blue", "Brown", "Green"))] <- "Other"
 tab <- table(d$gender, d$eye_colour2)
 tab
+vcd::assocstats(tab)$cramer
 ```
 
