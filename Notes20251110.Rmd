@@ -7,9 +7,12 @@ output: html_document
 
 ## The data
 
-```{r}
+```{r warning=FALSE}
 library(googlesheets4)
 gs4_deauth()
 d <- read_sheet("https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing", "clean_data")
 ```
+
+Let's construct a 95-percent CI (confidence interval) for the mean height. We assume the data we collected is a sample from the population of some students. And we ask ourselves what is the average height in the population. 
+
 

@@ -359,12 +359,15 @@ display: none;
 
 <div id="the-data" class="section level2">
 <h2>The data</h2>
-<pre class="r"><code>library(googlesheets4)</code></pre>
-<pre><code>## Warning: package &#39;googlesheets4&#39; was built under R version 4.4.3</code></pre>
-<pre class="r"><code>gs4_deauth()
+<pre class="r"><code>library(googlesheets4)
+gs4_deauth()
 d &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8pMsfS_J3yi9WcpcrhO6No/edit?usp=sharing&quot;, &quot;clean_data&quot;)</code></pre>
 <pre><code>## ✔ Reading from &quot;Green_DAR2025_data&quot;.</code></pre>
 <pre><code>## ✔ Range &#39;&#39;clean_data&#39;&#39;.</code></pre>
+<p>Let’s construct a 95-percent CI (confidence interval) for the mean
+height. We assume the data we collected is a sample from the population
+of some students. And we ask ourselves what is the average height in the
+population.</p>
 </div>
 
 
