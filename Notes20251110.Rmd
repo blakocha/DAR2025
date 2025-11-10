@@ -15,4 +15,8 @@ d <- read_sheet("https://docs.google.com/spreadsheets/d/1I1ZJ4I345TfaHvyCCgzMz8p
 
 Let's construct a 95-percent CI (confidence interval) for the mean height. We assume the data we collected is a sample from the population of some students. And we ask ourselves what is the average height in the population. 
 
-
+```{r}
+mean(d$height)
+test_result<-t.test(d$height, conf.level = 0.95)
+print(test_result$conf.int)
+```
