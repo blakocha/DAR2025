@@ -21,11 +21,46 @@ test_result<-t.test(d$height, conf.level = 0.95)
 print(test_result$conf.int)
 ```
 
+Compute:
+
+- The confidence interval for the average right hand span in the population (assume 99% confidence). 
+
+- The 95-percent confidence interval for the average movies watching time in hours (`movies`). 
+
+- The 95-percent confidence interval for the proportion of males in the group. 
+
+- The 95-percent confidence interval for the correlation between the height and head size (`head_circ`). 
+
+Some templates from my statistics2 course: 
+
+https://bookdown.org/blazej_kochanski/statistics2/templates-main.html
+
+
+
 The confidence interval for the average right hand span in the population (assume 99% confidence). 
+
+```{r}
+mean(d$right_hand_span)
+test_result<-t.test(d$right_hand_span, conf.level = 0.99)
+print(test_result$conf.int)
+```
 
 The 95-percent confidence interval for the average movies watching time in hours (`movies`). 
 
+```{r}
+mean(d$movies, na.rm=TRUE)
+test_result<-t.test(d$movies, conf.level = 0.95)
+print(test_result$conf.int)
+```
+
 The 95-percent confidence interval for the proportion of males in the group. 
+
+```{r}
+(nmales = sum(d$gender=="Male"))
+(n = length(d$gender))
+#install.packages("binom")
+binom::binom.confint(nmales, n, conf.level = 0.95, method="wilson")
+```
 
 The 95-percent confidence interval for the correlation between the height and head size (`head_circ`). 
 

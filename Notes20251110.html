@@ -375,12 +375,47 @@ print(test_result$conf.int)</code></pre>
 <pre><code>## [1] 174.1934 179.7297
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
+<p>Compute:</p>
+<ul>
+<li><p>The confidence interval for the average right hand span in the
+population (assume 99% confidence).</p></li>
+<li><p>The 95-percent confidence interval for the average movies
+watching time in hours (<code>movies</code>).</p></li>
+<li><p>The 95-percent confidence interval for the proportion of males in
+the group.</p></li>
+<li><p>The 95-percent confidence interval for the correlation between
+the height and head size (<code>head_circ</code>).</p></li>
+</ul>
+<p>Some templates from my statistics2 course:</p>
+<p><a href="https://bookdown.org/blazej_kochanski/statistics2/templates-main.html" class="uri">https://bookdown.org/blazej_kochanski/statistics2/templates-main.html</a></p>
 <p>The confidence interval for the average right hand span in the
 population (assume 99% confidence).</p>
+<pre class="r"><code>mean(d$right_hand_span)</code></pre>
+<pre><code>## [1] 19.95962</code></pre>
+<pre class="r"><code>test_result&lt;-t.test(d$right_hand_span, conf.level = 0.99)
+print(test_result$conf.int)</code></pre>
+<pre><code>## [1] 18.99084 20.92839
+## attr(,&quot;conf.level&quot;)
+## [1] 0.99</code></pre>
 <p>The 95-percent confidence interval for the average movies watching
 time in hours (<code>movies</code>).</p>
+<pre class="r"><code>mean(d$movies, na.rm=TRUE)</code></pre>
+<pre><code>## [1] 1.387333</code></pre>
+<pre class="r"><code>test_result&lt;-t.test(d$movies, conf.level = 0.95)
+print(test_result$conf.int)</code></pre>
+<pre><code>## [1] 1.035888 1.738779
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
 <p>The 95-percent confidence interval for the proportion of males in the
 group.</p>
+<pre class="r"><code>(nmales = sum(d$gender==&quot;Male&quot;))</code></pre>
+<pre><code>## [1] 34</code></pre>
+<pre class="r"><code>(n = length(d$gender))</code></pre>
+<pre><code>## [1] 52</code></pre>
+<pre class="r"><code>#install.packages(&quot;binom&quot;)
+binom::binom.confint(nmales, n, conf.level = 0.95, method=&quot;wilson&quot;)</code></pre>
+<pre><code>##   method  x  n      mean     lower     upper
+## 1 wilson 34 52 0.6538462 0.5180355 0.7684899</code></pre>
 <p>The 95-percent confidence interval for the correlation between the
 height and head size (<code>head_circ</code>).</p>
 <p>Some templates from my statistics2 course:</p>
