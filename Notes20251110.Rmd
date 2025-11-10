@@ -29,4 +29,8 @@ The 95-percent confidence interval for the proportion of males in the group.
 
 The 95-percent confidence interval for the correlation between the height and head size (`head_circ`). 
 
+Some templates from my statistics2 course: 
+
+https://bookdown.org/blazej_kochanski/statistics2/templates-main.html
+
 
