@@ -416,8 +416,24 @@ group.</p>
 binom::binom.confint(nmales, n, conf.level = 0.95, method=&quot;wilson&quot;)</code></pre>
 <pre><code>##   method  x  n      mean     lower     upper
 ## 1 wilson 34 52 0.6538462 0.5180355 0.7684899</code></pre>
+<pre class="r"><code>prop.test(nmales, n, conf.level = 0.95, correct = FALSE)$conf.int</code></pre>
+<pre><code>## [1] 0.5180355 0.7684899
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
 <p>The 95-percent confidence interval for the correlation between the
 height and head size (<code>head_circ</code>).</p>
+<pre class="r"><code>cor.test(d$height, d$head_circ, alternative = &quot;two.sided&quot;, conf.level = 0.95)</code></pre>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  d$height and d$head_circ
+## t = 5.5442, df = 49, p-value = 1.169e-06
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.4165683 0.7654829
+## sample estimates:
+##       cor 
+## 0.6208758</code></pre>
 <p>Some templates from my statistics2 course:</p>
 <p><a href="https://bookdown.org/blazej_kochanski/statistics2/templates-main.html" class="uri">https://bookdown.org/blazej_kochanski/statistics2/templates-main.html</a></p>
 </div>

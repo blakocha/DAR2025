@@ -60,9 +60,14 @@ The 95-percent confidence interval for the proportion of males in the group.
 (n = length(d$gender))
 #install.packages("binom")
 binom::binom.confint(nmales, n, conf.level = 0.95, method="wilson")
+prop.test(nmales, n, conf.level = 0.95, correct = FALSE)$conf.int
 ```
 
 The 95-percent confidence interval for the correlation between the height and head size (`head_circ`). 
+
+```{r}
+cor.test(d$height, d$head_circ, alternative = "two.sided", conf.level = 0.95)
+```
 
 Some templates from my statistics2 course: 
 
