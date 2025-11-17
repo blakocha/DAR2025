@@ -149,6 +149,8 @@ Recommended book on visualization:
 
 [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
 
-Task: try to create a "Strip chart" using the last example (boxplots and violins) as a strarting point. 
+Task: try to create a "Strip chart" using the last example (boxplots and violins) as a starting point. 
 
-https://clauswilke.com/dataviz/directory_of_visualizations_files/figure-html/multiple-distributions-1.png
+![](https://clauswilke.com/dataviz/directory_of_visualizations_files/figure-html/multiple-distributions-1.png)
+
+
