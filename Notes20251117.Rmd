@@ -134,6 +134,5 @@ head(df_long)
 ```{r}
 ggplot(df_long, aes(x = height, y = group, fill = group)) +
   geom_boxplot() +
-  labs(y = "", x = "Height (inches)", title = "Father vs Son Heights") +
-  theme_minimal()
+  labs(y = "", x = "Height (inches)", title = "Father vs Son Heights")
 ```
