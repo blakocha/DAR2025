@@ -91,10 +91,23 @@ G
 
 What is the average height of the son if father's height is around (a) 64, (b) 67, (c) 70 inches. 
 Store the results in variables called avgs_64, avgs_67, avgs_70.
+Add the points and the __regression line__ (linear regression) to plot.  
 
 ```{r}
 # mean(father.son$sheight[round(father.son$fheight)==64])
 (avgs_64 <- mean(df64$sheight))
 (avgs_67 <- mean(df67$sheight))
 (avgs_70 <- mean(df70$sheight))
+```
+
+
+```{r}
+G + 
+  geom_point(data = data.frame(x=64, y=avgs_64), aes(x = x, y = y), 
+             col = "orange", size = 4) +
+  geom_point(data = data.frame(x=67, y=avgs_67), aes(x = x, y = y), 
+             col = "darkgreen", size = 4) +
+  geom_point(data = data.frame(x=70, y=avgs_70), aes(x = x, y = y), 
+             col = "blue", size = 4) +
+  geom_smooth(method = "lm", col="red")
 ```
