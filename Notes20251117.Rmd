@@ -136,3 +136,13 @@ ggplot(df_long, aes(x = height, y = group, fill = group)) +
   geom_boxplot() +
   labs(y = "", x = "Height (inches)", title = "Father vs Son Heights")
 ```
+
+You can use similar ggplot structure to generate violin plots. Just put `geom_violin` instead of `geom_boxplot`:
+
+```{r}
+ggplot(df_long, aes(x = height, y = group, fill = group)) +
+  geom_violin() +
+  labs(y = "", x = "Height (inches)", title = "Father vs Son Heights")
+```
+
+
