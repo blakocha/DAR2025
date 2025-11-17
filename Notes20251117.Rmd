@@ -45,7 +45,7 @@ The descriptions of the axes.
 ```{r}
 ggplot(data = father.son, 
        mapping = aes(x = fheight, y = sheight)) +
-  geom_point(alpha = 0.4) +
+  geom_point(alpha = 0.4, col="blue") +
   xlab("Father's height [inches]") +
   ylab("Son's height [inches]") +
   ggtitle("Scatter plot of Pearson's father/son data")
