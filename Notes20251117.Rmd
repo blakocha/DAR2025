@@ -68,3 +68,8 @@ ggplot(data = father.son,
   ylab("Son's height [inches]") +
   ggtitle("Scatter plot of Pearson's father/son data")
 ```
+
+Now, colour the dots where fathers where ~67 inches tall (in green) and ~64 inches tall (in yellow). 
+
+
+
