@@ -31,3 +31,22 @@ ggplot(data = father.son,
   geom_point()
 ```
 
+
+Add `alpha = 0.4` to see through the points (they will be 60% transparent). 
+
+```{r}
+ggplot(data = father.son, 
+       mapping = aes(x = fheight, y = sheight)) +
+  geom_point(alpha = 0.4)
+```
+
+The descriptions of the axes. 
+
+```{r}
+ggplot(data = father.son, 
+       mapping = aes(x = fheight, y = sheight)) +
+  geom_point(alpha = 0.4) +
+  xlab("Father's height [inches]") +
+  ylab("Son's height [inches]") +
+  ggtitle("Scatter plot of Pearson's father/son data")
+```
