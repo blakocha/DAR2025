@@ -90,4 +90,11 @@ G
 ```
 
 What is the average height of the son if father's height is around (a) 64, (b) 67, (c) 70 inches. 
-Store the results in variables called avgs_64, avgs_67, avgs_70. 
+Store the results in variables called avgs_64, avgs_67, avgs_70.
+
+```{r}
+# mean(father.son$sheight[round(father.son$fheight)==64])
+(avgs_64 <- mean(df64$sheight))
+(avgs_67 <- mean(df67$sheight))
+(avgs_70 <- mean(df70$sheight))
+```
