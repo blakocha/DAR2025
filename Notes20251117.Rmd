@@ -145,4 +145,9 @@ ggplot(df_long, aes(x = height, y = group, fill = group)) +
   labs(y = "", x = "Height (inches)", title = "Father vs Son Heights")
 ```
 
+Recommended book on visualization: 
+
+[Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
+
+
 
