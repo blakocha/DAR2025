@@ -149,8 +149,22 @@ Recommended book on visualization:
 
 [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
 
+[Github page of the book with codes in R](https://github.com/clauswilke/dataviz)
+
 Task: try to create a "Strip chart" using the last example (boxplots and violins) as a starting point. 
 
 ![](https://clauswilke.com/dataviz/directory_of_visualizations_files/figure-html/multiple-distributions-1.png)
 
+```{r}
+ggplot(df_long, aes(x = height, y = group, colour = group)) +
+  geom_jitter(width = 0, height = 0.2, alpha = 0.4) +
+  labs(y = "", x = "Height (inches)", title = "Father vs Son Heights")
+```
 
+Another idea: "plotly" wrapper enabling someinteractivity. 
+
+```{r warning=FALSE, message=FALSE}
+#install.packages("plotly")
+library(plotly)
+ggplotly(G)
+```
