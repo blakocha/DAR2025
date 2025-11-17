@@ -115,3 +115,25 @@ G +
 
 Boxplots: let's have two boxplots in one chart for the fathers' height and sons' height. Horizontal. Use `ggplot`. 
 
+Reshape the data: 
+
+```{r warning=FALSE, message=FALSE}
+# Reshape to long format
+library(dplyr)
+library(tidyr)
+df_long <- father.son %>%
+  pivot_longer(cols = c(fheight, sheight),
+               names_to = "group",
+               values_to = "height") %>%
+  mutate(group = recode(group,
+                        fheight = "Father",
+                        sheight = "Son"))
+head(df_long)
+```
+
+```{r}
+ggplot(df_long, aes(x = height, y = group, fill = group)) +
+  geom_boxplot() +
+  labs(y = "", x = "Height (inches)", title = "Father vs Son Heights") +
+  theme_minimal()
+```
