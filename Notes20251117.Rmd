@@ -22,3 +22,12 @@ library(UsingR)
 data(father.son)
 head(father.son)
 ```
+
+Now let us build the scatter plot of fathers and sons' height. Father's height on x-axis and son's height on y axis. 
+
+```{r}
+ggplot(data = father.son, 
+       mapping = aes(x = fheight, y = sheight)) +
+  geom_point()
+```
+
