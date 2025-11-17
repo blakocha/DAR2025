@@ -161,10 +161,12 @@ ggplot(df_long, aes(x = height, y = group, colour = group)) +
   labs(y = "", x = "Height (inches)", title = "Father vs Son Heights")
 ```
 
-Another idea: "plotly" wrapper enabling someinteractivity. 
+Another idea: "plotly" wrapper enabling some interactivity. 
 
 ```{r warning=FALSE, message=FALSE}
 #install.packages("plotly")
 library(plotly)
 ggplotly(G)
 ```
+
+
