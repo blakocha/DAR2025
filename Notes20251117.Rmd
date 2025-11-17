@@ -111,3 +111,7 @@ G +
              col = "blue", size = 4) +
   geom_smooth(method = "lm", col="red")
 ```
+
+
+Boxplots: let's have two boxplots in one chart for the fathers' height and sons' height. Horizontal. Use `ggplot`. 
+
