@@ -1,0 +1,12 @@
+---
+title: "Notes20251117"
+author: "Blazej Kochanski"
+date: "2025-11-17"
+output: html_document
+---
+
+We will use ggplot2 package. 
+
+```{r}
+library(ggplot2)
+```
