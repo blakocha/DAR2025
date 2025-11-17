@@ -63,7 +63,7 @@ df70 <- father.son[round(father.son$fheight)==70, ]
 ggplot(data = father.son, 
        mapping = aes(x = fheight, y = sheight)) +
   geom_point(alpha = 0.4, col="black") +
-  geom_point(data = df70, alpha = 0.4, col = "blue")
+  geom_point(data = df70, alpha = 0.4, col = "blue") +
   xlab("Father's height [inches]") +
   ylab("Son's height [inches]") +
   ggtitle("Scatter plot of Pearson's father/son data")
