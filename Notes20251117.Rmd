@@ -71,5 +71,21 @@ ggplot(data = father.son,
 
 Now, colour the dots where fathers where ~67 inches tall (in green) and ~64 inches tall (in yellow). 
 
+```{r}
+# Auxiliary tables
+df67 <- father.son[round(father.son$fheight)==67, ]
+df64 <- father.son[round(father.son$fheight)==64, ]
 
+G <- ggplot(data = father.son, 
+       mapping = aes(x = fheight, y = sheight)) +
+  geom_point(alpha = 0.4, col="black") +
+  geom_point(data = df70, alpha = 0.4, col = "blue") +
+  geom_point(data = df67, alpha = 0.4, col = "chartreuse4") +
+  geom_point(data = df64, alpha = 0.4, col = "yellow2") +
+  xlab("Father's height [inches]") +
+  ylab("Son's height [inches]") +
+  ggtitle("Scatter plot of Pearson's father/son data")
+
+G 
+```
 
