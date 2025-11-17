@@ -50,3 +50,21 @@ ggplot(data = father.son,
   ylab("Son's height [inches]") +
   ggtitle("Scatter plot of Pearson's father/son data")
 ```
+
+
+Let us colour the dots where fathers where ~70 inches tall. 
+
+```{r}
+# Auxiliary table with the families where rounded height of the father is 70 inches
+df70 <- father.son[round(father.son$fheight)==70, ]
+```
+
+```{r}
+ggplot(data = father.son, 
+       mapping = aes(x = fheight, y = sheight)) +
+  geom_point(alpha = 0.4, col="black") +
+  geom_point(data = df70, alpha = 0.4, col = "blue")
+  xlab("Father's height [inches]") +
+  ylab("Son's height [inches]") +
+  ggtitle("Scatter plot of Pearson's father/son data")
+```
