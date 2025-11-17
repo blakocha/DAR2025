@@ -10,3 +10,15 @@ We will use ggplot2 package.
 ```{r}
 library(ggplot2)
 ```
+
+UsingR packages has the Pearson's data from ca. 1900. 
+
+```{r}
+#install.packages("UsingR")
+```
+
+```{r}
+library(UsingR)
+data(father.son)
+head(father.son)
+```
