@@ -25,7 +25,7 @@ data.frame(x = 1:10, x.squared = (1:10)^2)
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
+```{r pressure, fig.cap="A plot caption", echo=FALSE}
 plot(pressure)
 ```
 
@@ -47,4 +47,14 @@ replicate(1e6,{cor(rnorm(1000), rnorm(1000))})
 The formula for the mean ($\bar{x}$) is the following:
 
 $$  \bar{x} = \frac{1}{n}\sum_{i=1}^n x_i$$
+
+The notation for standard deviation is $\sigma$. 
+
+## Embedding of a picture
+
+![Picture from the Internet](picture1.jpg)
+
+
+
+
 
