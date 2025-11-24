@@ -30,3 +30,7 @@ plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## External links
+
+This is an external link to [my blog post](https://blazejkochanski.pl/post/farmer/).
