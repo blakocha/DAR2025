@@ -586,6 +586,26 @@ knitr::kable(my_table)</code></pre>
 </table>
 </div>
 </div>
+<div id="turning-off-warnings-in-rmarkdown" class="section level2">
+<h2>Turning off warnings in Rmarkdown:</h2>
+<pre class="r"><code>log(-1)   # produces a warning: NaNs produced</code></pre>
+<pre><code>## Warning in log(-1): NaNs produced</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<pre class="r"><code>log(-1)   # I set warning=FALSE, so the warning is supressed</code></pre>
+<pre><code>## [1] NaN</code></pre>
+<p>Supressing messages:</p>
+<pre class="r"><code>library(dplyr)   # prints startup messages</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.4.3</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(dplyr)   # would normally print startup messages, but I set message=FALSE (and warning=FALSE) in the chunk options</code></pre>
+</div>
 </div>
 
 

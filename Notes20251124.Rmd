@@ -108,3 +108,24 @@ knitr::kable(my_table)
 ```{r second-version-(centered)}
 knitr::kable(my_table, align="cc")
 ```
+
+## Turning off warnings in Rmarkdown:
+
+
+```{r warning-example}
+log(-1)   # produces a warning: NaNs produced
+```
+
+```{r warning-example2, warning=FALSE}
+log(-1)   # I set warning=FALSE, so the warning is supressed
+```
+
+Supressing messages:
+
+```{r message-example}
+library(dplyr)   # prints startup messages
+```
+
+```{r message-example2, message=FALSE, warning=FALSE}
+library(dplyr)   # would normally print startup messages, but I set message=FALSE (and warning=FALSE) in the chunk options
+```
