@@ -1,0 +1,51 @@
+---
+title: "Notes20251201"
+author: "Blazej Kochanski"
+date: "2025-12-01"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Working with data - tips and tricks
+
+### Saving the data after preprocessing
+
+Example:
+
+```{r preprocessing, eval=FALSE}
+load(url("https://github.com/pbiecek/Diagnoza/raw/master/data/osoby.rda"))
+extract <- osoby[, c('numer_gd', 'numer_osoby', 'hc5', 'hc6', 'hc10', 
+                     'hp65', 'hp52', 'hp53', 'waga_2015_ind', 'wiek2015')]
+names(extract) <- c('household_id', 'person_id', 'family_no', 'family_role', 
+                    'sex', 'income', 'height', 'weight', 'survey_weight', 'age')
+extract$income[is.na(extract$income)] <- -1
+extract <- na.omit(extract)
+extract$income[extract$income == -1] <- NA
+extract$family_id <- paste(extract$household_id, extract$family_no)
+extract_husband <- extract[(extract$family_role == 1 | extract$family_role == 2) &  extract$sex == 1, 
+                           c('family_id', 'income', 'height', 'weight', 'survey_weight', 'age')]
+names(extract_husband) <- c('family_id', 'husband_income', 'husband_height', 'husband_weight', 
+                            'husband_survey_weight', 'husband_age')
+
+extract_wife <- extract[(extract$family_role == 1 | extract$family_role == 2) & extract$sex == 2, 
+                        c('family_id', 'income', 'height', 'weight', 'survey_weight', 'age')]
+names(extract_wife) <- c('family_id', 'wife_income', 'wife_height', 'wife_weight', 
+                         'wife_survey_weight', 'wife_age')
+e <- merge(extract_husband, extract_wife)
+e$avg_survey_weight <- (e$husband_survey_weight + e$wife_survey_weight)/2
+e$avg_survey_weight <- e$avg_survey_weight / mean(e$avg_survey_weight)
+saveRDS(e, "my_data.rds")
+```
+
+In the code above, the data is downloaded from the internet, processed, and then the final, relatively small, table `e` is saved in the `my_data.rds` file. I set `eval=FALSE` in the code chunk above, so that it is not run each time I knit the Rmarkdown file. If I want to use the preprocessed data, I just read it from the `my_data.rds` file:
+
+```{r}
+my_data <- readRDS("my_data.rds")
+```
+
+... and I can work from here. 
+
+
