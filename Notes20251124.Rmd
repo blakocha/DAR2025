@@ -8,6 +8,7 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
 ```
 
 
@@ -56,5 +57,54 @@ The notation for standard deviation is $\sigma$.
 
 
 
+# Title
 
+## Section
 
+### Subsection
+
+_italic_ or *italic*
+
+__bold__ or **bold**
+
+*__bold italic__* or _**bold italic**_ or __*bold italic*__ or **_bold italic_**
+
+Inline code:
+
+Factorial of 5 is 5!=`r factorial(5)`. 
+
+Factorial of 10 is 10!=`r factorial(10)`.
+
+Factorial of 10 is 10!`r options(scipen=999); factorial(10)`. 
+
+If Pearson correlation coefficient `r (x<-0.6)` then R-squared is `r x^2`. 
+
+### Tables:
+
+Manual:
+
+| Natural number | Its square |
+|----------------|------------|
+|     10         |   100      |
+|      9         |    81      |
+|      8         |    64      |
+
+Manual centered:
+
+| Natural number | Its square |
+|:--------------:|:----------:|
+|     10         |   100      |
+|      9         |    81      |
+|      8         |    64      |
+
+Using `knitr::kable`:
+
+```{r first-version}
+my_table <- data.frame(x = 1:10, x.squared = (1:10)^2)
+names(my_table) <- c("Natural number", "Its square")
+knitr::kable(my_table)
+```
+
+```{r second-version-(centered)}
+knitr::kable(my_table, align="cc")
+```
