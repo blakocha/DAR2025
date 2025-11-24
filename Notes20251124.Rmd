@@ -42,3 +42,9 @@ This is an external link to [my blog post](https://blazejkochanski.pl/post/farme
 replicate(1e6,{cor(rnorm(1000), rnorm(1000))})
 ```
 
+## LaTeX formulas:
+
+The formula for the mean ($\bar{x}$) is the following:
+
+$$  \bar{x} = \frac{1}{n}\sum_{i=1}^n x_i$$
+
