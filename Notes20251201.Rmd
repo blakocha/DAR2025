@@ -77,3 +77,37 @@ my_data3 <- my_data[ , c("family_id", "husband_income", "wife_income")]
 
 If you need to merge two tables, use `merge()`. See above for the example. 
 
+## Using the `dplyr` package
+
+Calculate the average, minimum, and maximum miles per gallon `mpg` rating by number of cylinders `cyl`. 
+
+```{r warning=FALSE}
+data(mtcars)
+head(mtcars)
+
+library(dplyr)
+
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(avg_mpg = mean(mpg), min_mpg = min(mpg), max_mpg=max(mpg))
+
+```
+
+
+Let us use `mutate` to create a column saying wether the car is heavy or light. `wt>3` would be `heavy`. 
+
+```{r warning=FALSE}
+mtcars %>%
+  mutate(wt_group = ifelse(wt>3, "heavy", "not heavy")) %>%
+  group_by(wt_group) %>%
+  summarise(avg_mpg = mean(mpg), min_mpg = min(mpg), max_mpg=max(mpg))
+
+```
+
+In dplyr, use select if you want to have just a few columns in the resulting data frame. 
+
+```{r warning=FALSE}
+mtcars %>%
+  select(wt, hp) %>%
+  cor()
+```

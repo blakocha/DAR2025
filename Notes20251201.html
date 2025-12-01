@@ -432,6 +432,58 @@ mean(my_data2$husband_income)</code></pre>
 <p>If you need to merge two tables, use <code>merge()</code>. See above
 for the example.</p>
 </div>
+<div id="using-the-dplyr-package" class="section level2">
+<h2>Using the <code>dplyr</code> package</h2>
+<p>Calculate the average, minimum, and maximum miles per gallon
+<code>mpg</code> rating by number of cylinders <code>cyl</code>.</p>
+<pre class="r"><code>data(mtcars)
+head(mtcars)</code></pre>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>mtcars %&gt;%
+  group_by(cyl) %&gt;%
+  summarise(avg_mpg = mean(mpg), min_mpg = min(mpg), max_mpg=max(mpg))</code></pre>
+<pre><code>## # A tibble: 3 × 4
+##     cyl avg_mpg min_mpg max_mpg
+##   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1     4    26.7    21.4    33.9
+## 2     6    19.7    17.8    21.4
+## 3     8    15.1    10.4    19.2</code></pre>
+<p>Let us use <code>mutate</code> to create a column saying wether the
+car is heavy or light. <code>wt&gt;3</code> would be
+<code>heavy</code>.</p>
+<pre class="r"><code>mtcars %&gt;%
+  mutate(wt_group = ifelse(wt&gt;3, &quot;heavy&quot;, &quot;not heavy&quot;)) %&gt;%
+  group_by(wt_group) %&gt;%
+  summarise(avg_mpg = mean(mpg), min_mpg = min(mpg), max_mpg=max(mpg))</code></pre>
+<pre><code>## # A tibble: 2 × 4
+##   wt_group  avg_mpg min_mpg max_mpg
+##   &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 heavy        16.8    10.4    24.4
+## 2 not heavy    25.6    19.7    33.9</code></pre>
+<p>In dplyr, use select if you want to have just a few columns in the
+resulting data frame.</p>
+<pre class="r"><code>mtcars %&gt;%
+  select(wt, hp) %&gt;%
+  cor()</code></pre>
+<pre><code>##           wt        hp
+## wt 1.0000000 0.6587479
+## hp 0.6587479 1.0000000</code></pre>
+</div>
 
 
 
