@@ -547,6 +547,96 @@ console.</p>
 <pre><code>## [1] 5391   12</code></pre>
 <p>I can see that in my table there are 5391 observations and 12
 variables.</p>
+<pre class="r"><code>#install.packages(&quot;summarytools&quot;)
+library(summarytools)</code></pre>
+<pre><code>## Warning: package &#39;summarytools&#39; was built under R version 4.4.3</code></pre>
+<pre class="r"><code>dfSummary(my_data)</code></pre>
+<pre><code>## Data Frame Summary  
+## my_data  
+## Dimensions: 5391 x 12  
+## Duplicates: 0  
+## 
+## ----------------------------------------------------------------------------------------------------------------------------
+## No   Variable                Stats / Values                Freqs (% of Valid)     Graph                 Valid      Missing  
+## ---- ----------------------- ----------------------------- ---------------------- --------------------- ---------- ---------
+## 1    family_id               1. 2058 1                        4 ( 0.1%)                                 5391       0        
+##      [character]             2. 100567 1                      2 ( 0.0%)                                 (100.0%)   (0.0%)   
+##                              3. 100715 1                      2 ( 0.0%)                                                     
+##                              4. 41341 1                       2 ( 0.0%)                                                     
+##                              5. 45265 1                       2 ( 0.0%)                                                     
+##                              6. 51830 1                       2 ( 0.0%)                                                     
+##                              7. 100004 1                      1 ( 0.0%)                                                     
+##                              8. 100009 1                      1 ( 0.0%)                                                     
+##                              9. 100012 1                      1 ( 0.0%)                                                     
+##                              10. 100014 2                     1 ( 0.0%)                                                     
+##                              [ 5373 others ]               5373 (99.7%)           IIIIIIIIIIIIIIIIIII                       
+## 
+## 2    husband_income          Mean (sd) : 2338.8 (1649.2)   367 distinct values    :                     4580       811      
+##      [numeric]               min &lt; med &lt; max:                                     :                     (85.0%)    (15.0%)  
+##                              140 &lt; 2000 &lt; 28000                                   :                                         
+##                              IQR (CV) : 1405.8 (0.7)                              : .                                       
+##                                                                                   : :                                       
+## 
+## 3    husband_height          Mean (sd) : 175.3 (6.6)       52 distinct values             :             5391       0        
+##      [numeric]               min &lt; med &lt; max:                                             :             (100.0%)   (0.0%)   
+##                              150 &lt; 175 &lt; 203                                            : : :                               
+##                              IQR (CV) : 10 (0)                                          : : : :                             
+##                                                                                     . : : : : : .                           
+## 
+## 4    husband_weight          Mean (sd) : 85.1 (13.2)       92 distinct values           :               5391       0        
+##      [numeric]               min &lt; med &lt; max:                                         . : :             (100.0%)   (0.0%)   
+##                              40 &lt; 84 &lt; 160                                            : : :                                 
+##                              IQR (CV) : 16 (0.2)                                      : : :                                 
+##                                                                                     . : : : : .                             
+## 
+## 5    husband_survey_weight   Mean (sd) : 1 (0.8)           4926 distinct values   :                     5391       0        
+##      [numeric]               min &lt; med &lt; max:                                     :                     (100.0%)   (0.0%)   
+##                              0 &lt; 0.8 &lt; 10.2                                       :                                         
+##                              IQR (CV) : 0.8 (0.8)                                 : :                                       
+##                                                                                   : : .                                     
+## 
+## 6    husband_age             Mean (sd) : 54.6 (14.3)       75 distinct values             : :           5391       0        
+##      [numeric]               min &lt; med &lt; max:                                         . . : : .         (100.0%)   (0.0%)   
+##                              20 &lt; 55 &lt; 94                                             : : : : :                             
+##                              IQR (CV) : 22 (0.3)                                    : : : : : : :                           
+##                                                                                   . : : : : : : : :                         
+## 
+## 7    wife_income             Mean (sd) : 1653.6 (1120.8)   359 distinct values    :                     4062       1329     
+##      [numeric]               min &lt; med &lt; max:                                     :                     (75.3%)    (24.7%)  
+##                              100 &lt; 1400 &lt; 16000                                   : .                                       
+##                              IQR (CV) : 1000 (0.7)                                : :                                       
+##                                                                                   : : .                                     
+## 
+## 8    wife_height             Mean (sd) : 163.4 (5.8)       42 distinct values             :             5391       0        
+##      [numeric]               min &lt; med &lt; max:                                             :             (100.0%)   (0.0%)   
+##                              140 &lt; 164 &lt; 188                                            . : :                               
+##                              IQR (CV) : 8 (0)                                           : : : :                             
+##                                                                                       : : : : : .                           
+## 
+## 9    wife_weight             Mean (sd) : 70.5 (12.5)       81 distinct values         : .               5391       0        
+##      [numeric]               min &lt; med &lt; max:                                         : :               (100.0%)   (0.0%)   
+##                              36 &lt; 70 &lt; 140                                            : : :                                 
+##                              IQR (CV) : 18 (0.2)                                    : : : :                                 
+##                                                                                     : : : : : .                             
+## 
+## 10   wife_survey_weight      Mean (sd) : 0.9 (0.7)         4940 distinct values   :                     5391       0        
+##      [numeric]               min &lt; med &lt; max:                                     :                     (100.0%)   (0.0%)   
+##                              0 &lt; 0.7 &lt; 9                                          : .                                       
+##                              IQR (CV) : 0.7 (0.8)                                 : :                                       
+##                                                                                   : : .                                     
+## 
+## 11   wife_age                Mean (sd) : 52 (14.1)         75 distinct values           . : .           5391       0        
+##      [numeric]               min &lt; med &lt; max:                                         . : : :           (100.0%)   (0.0%)   
+##                              20 &lt; 52 &lt; 96                                           : : : : : :                             
+##                              IQR (CV) : 21 (0.3)                                    : : : : : :                             
+##                                                                                   . : : : : : : : .                         
+## 
+## 12   avg_survey_weight       Mean (sd) : 1 (0.8)           5005 distinct values   :                     5391       0        
+##      [numeric]               min &lt; med &lt; max:                                     :                     (100.0%)   (0.0%)   
+##                              0 &lt; 0.8 &lt; 9.7                                        : .                                       
+##                              IQR (CV) : 0.8 (0.8)                                 : :                                       
+##                                                                                   : : .                                     
+## ----------------------------------------------------------------------------------------------------------------------------</code></pre>
 </div>
 
 

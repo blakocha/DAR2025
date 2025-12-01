@@ -145,3 +145,8 @@ dim(my_data)
 
 I can see that in my table there are `r dim(my_data)[1]` observations and `r dim(my_data)[2]` variables. 
 
+```{r}
+#install.packages("summarytools")
+library(summarytools)
+dfSummary(my_data)
+```
