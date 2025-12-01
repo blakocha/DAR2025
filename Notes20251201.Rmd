@@ -111,3 +111,22 @@ mtcars %>%
   select(wt, hp) %>%
   cor()
 ```
+
+Filtering the rows with the `filter` command:
+
+```{r warning=FALSE}
+mtcars %>%
+  select(wt, hp) %>%
+  filter(wt>3) %>%
+  cor()
+```
+
+And is `&`; or is `|`. 
+
+
+```{r warning=FALSE}
+mtcars %>%
+  select(wt, hp) %>%
+  filter((wt>4 | wt<2) & (hp>200| hp<150))
+```
+

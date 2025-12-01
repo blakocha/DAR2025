@@ -483,6 +483,26 @@ resulting data frame.</p>
 <pre><code>##           wt        hp
 ## wt 1.0000000 0.6587479
 ## hp 0.6587479 1.0000000</code></pre>
+<p>Filtering the rows with the <code>filter</code> command:</p>
+<pre class="r"><code>mtcars %&gt;%
+  select(wt, hp) %&gt;%
+  filter(wt&gt;3) %&gt;%
+  cor()</code></pre>
+<pre><code>##           wt        hp
+## wt 1.0000000 0.3628471
+## hp 0.3628471 1.0000000</code></pre>
+<p>And is <code>&amp;</code>; or is <code>|</code>.</p>
+<pre class="r"><code>mtcars %&gt;%
+  select(wt, hp) %&gt;%
+  filter((wt&gt;4 | wt&lt;2) &amp; (hp&gt;200| hp&lt;150))</code></pre>
+<pre><code>##                        wt  hp
+## Cadillac Fleetwood  5.250 205
+## Lincoln Continental 5.424 215
+## Chrysler Imperial   5.345 230
+## Honda Civic         1.615  52
+## Toyota Corolla      1.835  65
+## Fiat X1-9           1.935  66
+## Lotus Europa        1.513 113</code></pre>
 </div>
 
 
