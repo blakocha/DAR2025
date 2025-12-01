@@ -391,8 +391,46 @@ saved in the <code>my_data.rds</code> file. I set
 each time I knit the Rmarkdown file. If I want to use the preprocessed
 data, I just read it from the <code>my_data.rds</code> file:</p>
 <pre class="r"><code>my_data &lt;- readRDS(&quot;my_data.rds&quot;)</code></pre>
-<p>… and I can work from here.</p>
+<p>or even directly from github:</p>
+<pre class="r"><code>my_data &lt;- readRDS(url(&quot;https://github.com/blakocha/DAR2025/raw/main/my_data.rds&quot;))</code></pre>
+<p>… and I can work from here. For example:</p>
+<pre class="r"><code>summary(lm(husband_income~husband_height+wife_height, data=my_data))</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = husband_income ~ husband_height + wife_height, data = my_data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2547.6  -901.0  -340.6   436.2 25578.0 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    -6843.262    807.513  -8.474  &lt; 2e-16 ***
+## husband_height    37.206      3.817   9.747  &lt; 2e-16 ***
+## wife_height       16.297      4.298   3.791 0.000152 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 1624 on 4577 degrees of freedom
+##   (811 observations deleted due to missingness)
+## Multiple R-squared:  0.0309, Adjusted R-squared:  0.03048 
+## F-statistic: 72.98 on 2 and 4577 DF,  p-value: &lt; 2.2e-16</code></pre>
+<p>It seems there is a weak but statistically significant association
+between men’s income and men’s height as well his wife’s height!</p>
 </div>
+</div>
+<div id="processing-the-data-frames" class="section level2">
+<h2>Processing the data frames</h2>
+<p>I would like to have a data frame where the husband income is above
+2000 and is not null.</p>
+<p>The code follows this structure
+<code>mydataframe[rules for rows , rules for columns]</code>:</p>
+<pre class="r"><code>my_data2 &lt;- my_data[!is.na(my_data$husband_income) &amp; my_data$husband_income&gt;2000 , ]
+mean(my_data2$husband_income)</code></pre>
+<pre><code>## [1] 3521.311</code></pre>
+<pre class="r"><code>my_data3 &lt;- my_data[ , c(&quot;family_id&quot;, &quot;husband_income&quot;, &quot;wife_income&quot;)]</code></pre>
+<p>If you need to merge two tables, use <code>merge()</code>. See above
+for the example.</p>
 </div>
 
 

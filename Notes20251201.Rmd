@@ -46,6 +46,34 @@ In the code above, the data is downloaded from the internet, processed, and then
 my_data <- readRDS("my_data.rds")
 ```
 
-... and I can work from here. 
+or even directly from github:
 
+```{r, eval=FALSE}
+my_data <- readRDS(url("https://github.com/blakocha/DAR2025/raw/main/my_data.rds"))
+```
+
+... and I can work from here. For example:
+
+```{r}
+summary(lm(husband_income~husband_height+wife_height, data=my_data))
+```
+
+It seems there is a weak but statistically significant association between men's income and men's height as well his wife's height!
+
+## Processing the data frames
+
+I would like to have a data frame where the husband income is above 2000 and is not null. 
+
+The code follows this structure `mydataframe[rules for rows , rules for columns]`: 
+
+```{r}
+my_data2 <- my_data[!is.na(my_data$husband_income) & my_data$husband_income>2000 , ]
+mean(my_data2$husband_income)
+```
+
+```{r}
+my_data3 <- my_data[ , c("family_id", "husband_income", "wife_income")]
+```
+
+If you need to merge two tables, use `merge()`. See above for the example. 
 
