@@ -123,10 +123,25 @@ mtcars %>%
 
 And is `&`; or is `|`. 
 
-
 ```{r warning=FALSE}
 mtcars %>%
   select(wt, hp) %>%
   filter((wt>4 | wt<2) & (hp>200| hp<150))
 ```
+
+## Other commands
+
+Run `head()` to see just a first few rows in the console. 
+
+```{r}
+head(my_data,10)
+```
+
+Size of the data table:
+
+```{r}
+dim(my_data)
+```
+
+I can see that in my table there are `r dim(my_data)[1]` observations and `r dim(my_data)[2]` variables. 
 
