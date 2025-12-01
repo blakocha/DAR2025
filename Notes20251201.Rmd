@@ -2,16 +2,20 @@
 title: "Notes20251201"
 author: "Blazej Kochanski"
 date: "2025-12-01"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Working with data - tips and tricks
+# Working with data - tips and tricks
 
-### Saving the data after preprocessing
+## Saving the data after preprocessing
 
 Example:
 
@@ -62,6 +66,8 @@ It seems there is a weak but statistically significant association between men's
 
 ## Processing the data frames
 
+### Selecting columns and rows
+
 I would like to have a data frame where the husband income is above 2000 and is not null. 
 
 The code follows this structure `mydataframe[rules for rows , rules for columns]`: 
@@ -75,9 +81,35 @@ mean(my_data2$husband_income)
 my_data3 <- my_data[ , c("family_id", "husband_income", "wife_income")]
 ```
 
+### Merging data frames
+
 If you need to merge two tables, use `merge()`. See above for the example. 
 
+Example:
+
+I am downloading data on the [income quintile share ratio](https://ec.europa.eu/eurostat/databrowser/product/page/ilc_di11c) and [Gini coefficient](https://ec.europa.eu/eurostat/databrowser/view/ilc_di12/default/table?lang=en) from the eurostat using `eurostat` package. 
+
+I am filtering the data to include the data for the total population (no sex/age groups etc.) and then merging the two data frames. 
+
+```{r warning=FALSE, message=FALSE}
+library(eurostat)
+DatasetG <- get_eurostat("ilc_di11c")
+DataGini <- get_eurostat("ilc_di12")
+d1 <- DatasetG[DatasetG$age=="TOTAL" & DatasetG$sex=="T" ,c("geo", "TIME_PERIOD", "values")]
+names(d1) <- c("geo", "TIME_PERIOD", "qratio")
+d2 <- DataGini[DataGini$age=="TOTAL",c("geo", "TIME_PERIOD", "values")]
+names(d2) <- c("geo", "TIME_PERIOD", "gini")
+merge1 <- merge(d1, d2)
+head(merge1, 10)
+merge2 <- merge(d1, d2, all=TRUE)
+head(merge2, 10)
+```
+
+Notice what was changes after including the `all=TRUE` option. 
+
 ## Using the `dplyr` package
+
+### Summarising
 
 Calculate the average, minimum, and maximum miles per gallon `mpg` rating by number of cylinders `cyl`. 
 
@@ -93,6 +125,7 @@ mtcars %>%
 
 ```
 
+### Transforming data (`mutate`)
 
 Let us use `mutate` to create a column saying wether the car is heavy or light. `wt>3` would be `heavy`. 
 
@@ -104,6 +137,8 @@ mtcars %>%
 
 ```
 
+### Selecting columns
+
 In dplyr, use select if you want to have just a few columns in the resulting data frame. 
 
 ```{r warning=FALSE}
@@ -111,6 +146,8 @@ mtcars %>%
   select(wt, hp) %>%
   cor()
 ```
+
+### Selecting (filtering) rows
 
 Filtering the rows with the `filter` command:
 
@@ -121,12 +158,24 @@ mtcars %>%
   cor()
 ```
 
+### Logical functions
+
 And is `&`; or is `|`. 
 
 ```{r warning=FALSE}
 mtcars %>%
   select(wt, hp) %>%
   filter((wt>4 | wt<2) & (hp>200| hp<150))
+```
+
+## Tabulations
+
+```{r}
+table(mtcars$cyl, mtcars$gear)
+```
+
+```{r}
+table(DatasetG$age)
 ```
 
 ## Other commands
