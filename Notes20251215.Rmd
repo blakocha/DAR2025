@@ -53,5 +53,30 @@ The values of principal components are stored in pca$x
 head(pca$x)
 ```
 
+```{r}
+library(ggplot2)
+x2 <- data.frame(pca$x, fake = coin$fake)
+head(x2)
+ggplot(x2, aes(x = PC1, y = PC2, col=as.factor(fake))) +
+         geom_point(alpha = 0.5)
+```
+
+```{r}
+library(plotly)
+
+plot_ly(
+  data = x2,
+  x = ~PC1,
+  y = ~PC2,
+  z = ~PC3,
+  color = ~as.factor(fake),
+  type = "scatter3d",
+  mode = "markers",
+  marker = list(opacity = 0.5)
+)
+```
 
 
+```{r}
+pca$rotation
+```
