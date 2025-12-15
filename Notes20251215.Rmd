@@ -40,6 +40,14 @@ plot_ly(
 )
 ```
 
+```{r}
+X <- coin[,4:16]
+pca <- prcomp(X, scale. = TRUE)
+summary(pca)
+plot(pca)
+```
+
+
 
 
 
