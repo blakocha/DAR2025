@@ -24,3 +24,22 @@ ggplot(coin, aes(x = max_seria, y = liczba_serii, col=as.factor(fake))) +
          geom_point(alpha = 0.5)
 
 ```
+
+```{r}
+library(plotly)
+
+plot_ly(
+  data = coin,
+  x = ~max_seria,
+  y = ~liczba_serii,
+  z = ~liczba_O,
+  color = ~as.factor(fake),
+  type = "scatter3d",
+  mode = "markers",
+  marker = list(opacity = 0.5)
+)
+```
+
+
+
+
