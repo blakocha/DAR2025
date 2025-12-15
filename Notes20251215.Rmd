@@ -9,6 +9,13 @@ output:
     toc_float: true
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE
+)
+```
+
 Principal component analysis: https://en.wikipedia.org/wiki/Principal_component_analysis
 
 We will use the data on fake and random series of coin tosses:
