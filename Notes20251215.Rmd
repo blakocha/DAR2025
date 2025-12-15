@@ -47,7 +47,11 @@ summary(pca)
 plot(pca)
 ```
 
+The values of principal components are stored in pca$x
 
+```{r}
+head(pca$x)
+```
 
 
 
