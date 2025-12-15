@@ -1,0 +1,12 @@
+---
+title: "Notes20251201"
+author: "Blazej Kochanski"
+date: "2025-12-15"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+---
+
+link: https://raw.githubusercontent.com/blakocha/ADRPY2025/refs/heads/main/cointosses.csv
